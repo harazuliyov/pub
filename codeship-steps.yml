@@ -2,10 +2,10 @@
   name: example_parallel_step
   steps:
     - service: codeship_example
-      command: printenv
+      command: /bin/bash -c 'ls'
     - service: codeship_example
       # shell wrapper not required unless passing along env vars or combining commands
-      command: /bin/bash -c 'ls && echo ${CI_BUILD_ID}'
+      command: /bin/bash -c 'ls'
 - name: example_tagged_step
   tag: master
   service: codeship_example
